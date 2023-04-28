@@ -1,7 +1,7 @@
 import { DefaultSeoProps } from "next-seo";
 
 const DefaultSeoInfo: DefaultSeoProps = {
-  titleTemplate: "%s | Example",
+  titleTemplate: "%s",
   additionalLinkTags: [
     {
       rel: "icon",
