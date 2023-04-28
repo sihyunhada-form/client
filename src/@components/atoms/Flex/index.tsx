@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { FlexProps } from "~/@interfaces/Flex";
+import { FlexProps } from "~/@interfaces";
 
 export const Flex = ({
   children,

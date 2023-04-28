@@ -6,7 +6,7 @@ export const Text = ({
   weight = 400,
   color = "Black",
   spacing = 0,
-  font = "Pretendard",
+  font = "Bookk",
   height = 120,
   cursor = "auto",
   background,
