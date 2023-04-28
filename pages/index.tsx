@@ -1,7 +1,7 @@
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { NextSeo } from "next-seo";
 import Image from "next/image";
-import Link from "next/link";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import styled, { keyframes } from "styled-components";
@@ -37,6 +37,12 @@ export default function Home() {
   const [isRendered, setIsRendered] = useState(false);
   const [isLangClicked, setIsLangClicked] = useState(false);
   const [isContinue, setIsContinue] = useState(false);
+  //lange
+  const router = useRouter();
+
+  const selectLang = (lang: string) => {
+    router.push(router.asPath, router.asPath, { locale: lang });
+  };
 
   // userInfo
   const [userInfo, setUserInfo] = useState({
@@ -152,13 +158,15 @@ export default function Home() {
               <Button
                 cursor="pointer"
                 key={uuidv4()}
-                onClick={() => setIsLangClicked(true)}
+                onClick={() => {
+                  selectLang(el.lang);
+                  setIsLangClicked(true);
+                }}
                 background="lightgray"
                 width="100%"
+                id={el.lang}
               >
-                <Link href={"/"} locale={el.lang}>
-                  <Text text={el.desc} cursor="pointer" size={16} />
-                </Link>
+                <Text text={el.desc} cursor="pointer" size={16} />
               </Button>
             ))}
           </Flex>
